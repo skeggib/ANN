@@ -1,5 +1,7 @@
 #!/bin/bash
 
+mkdir class
+
 # Recherche de toute les sources
 SRC=`find src -name '*.java'`
 # Recherche de tout les .jar dans class
