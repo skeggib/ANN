@@ -9,8 +9,8 @@ public interface ActivationFunction {
 	 *
 	 * @return     
 	 */
-	public float activation(float input);
+	public double activation(double input);
 
-	public void setThreshold(float threshold);
+	public void setThreshold(double threshold);
 
 }

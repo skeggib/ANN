@@ -10,10 +10,10 @@ Sébastien Klasa (skeggib)
 
 Compile .java file :
 
-`./javac.sh <java_file>`
+`./compile.sh`
 
-## Execution
+## Tests
 
-Change directory to *class/*, then :
+Change dorectory to 'class/', then :
 
-`java <class_path>`
+`./run_ann_tests.sh`

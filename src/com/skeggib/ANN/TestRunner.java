@@ -6,9 +6,11 @@ import org.junit.runner.notification.Failure;
 
 import com.skeggib.Tools.TerminalMsg;
 
+import com.skeggib.ANN.Core.ActivationHeavisideTest;
+
 public class TestRunner {
     public static void main(String[] args) {
-        // TestRunner.runTest(<test_class>.class);
+        TestRunner.runTest(ActivationHeavisideTest.class);
     }
 
     private static void runTest(Class classes) {
