@@ -10,4 +10,10 @@ Sébastien Klasa (skeggib)
 
 Compile .java file :
 
-`javac -d class -cp class <java_file>`
+`./javac.sh <java_file>`
+
+## Execution
+
+Change directory to *class/*, then :
+
+`java <class_path>`
