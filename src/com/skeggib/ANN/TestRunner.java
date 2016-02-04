@@ -1,10 +1,10 @@
-package com.skeggib.ann;
+package com.skeggib.ANN;
 
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 
-import com.skeggib.tools.TerminalMsg;
+import com.skeggib.Tools.TerminalMsg;
 
 public class TestRunner {
     public static void main(String[] args) {
