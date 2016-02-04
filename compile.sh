@@ -46,13 +46,13 @@ do
 		if [ $java_file_edit -gt $class_file_edit ]
 		then
 			# On compile
-			echo -e "\033[1;31m$java_file\033[0;0m"
+			#echo -e "\033[1;31m$java_file\033[0;0m"
 			javac -sourcepath $SOURCEPATH -cp $CLASSPATH -d class $java_file
 		fi
 	# Si le .class n'existe pas
 	else
 		# On compile
-		echo -e "\033[1;31m$java_file\033[0;0m"
+		#echo -e "\033[1;31m$java_file\033[0;0m"
 		javac -sourcepath $SOURCEPATH -cp $CLASSPATH -d class $java_file
 	fi
 done

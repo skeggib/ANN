@@ -1,7 +1,5 @@
 package com.skeggib.ANN.Core;
 
-import com.skeggib.ANN.Core.ActivationFunction;
-
 public class ActivationHeaviside implements ActivationFunction {
 
 	private double threshold;

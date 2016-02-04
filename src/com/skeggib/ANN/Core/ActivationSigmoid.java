@@ -1,7 +1,5 @@
 package com.skeggib.ANN.Core;
 
-import com.skeggib.ANN.Core.ActivationFunction;
-
 public class ActivationSigmoid implements ActivationFunction {
 
 	private double threshold;
