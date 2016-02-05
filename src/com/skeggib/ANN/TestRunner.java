@@ -9,12 +9,14 @@ import com.skeggib.Tools.TerminalMsg;
 import com.skeggib.ANN.Core.ActivationHeavisideTest;
 import com.skeggib.ANN.Core.ActivationSigmoidTest;
 import com.skeggib.ANN.Core.InputTest;
+import com.skeggib.ANN.Core.NeuronTest;
 
 public class TestRunner {
     public static void main(String[] args) {
         TestRunner.runTest(ActivationHeavisideTest.class);
         TestRunner.runTest(ActivationSigmoidTest.class);
         TestRunner.runTest(InputTest.class);
+        TestRunner.runTest(NeuronTest.class);
     }
 
     private static void runTest(Class classes) {
