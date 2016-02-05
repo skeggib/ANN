@@ -1,4 +1,4 @@
-package com.skeggib.tools;
+package com.skeggib.Tools;
 
 public class TerminalMsg {
 

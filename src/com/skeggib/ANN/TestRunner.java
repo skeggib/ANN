@@ -1,14 +1,22 @@
-package com.skeggib.ann;
+package com.skeggib.ANN;
 
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 
-import com.skeggib.tools.TerminalMsg;
+import com.skeggib.Tools.TerminalMsg;
+
+import com.skeggib.ANN.Core.ActivationHeavisideTest;
+import com.skeggib.ANN.Core.ActivationSigmoidTest;
+import com.skeggib.ANN.Core.InputTest;
+import com.skeggib.ANN.Core.NeuronTest;
 
 public class TestRunner {
     public static void main(String[] args) {
-        // TestRunner.runTest(<test_class>.class);
+        TestRunner.runTest(ActivationHeavisideTest.class);
+        TestRunner.runTest(ActivationSigmoidTest.class);
+        TestRunner.runTest(InputTest.class);
+        TestRunner.runTest(NeuronTest.class);
     }
 
     private static void runTest(Class classes) {

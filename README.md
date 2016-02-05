@@ -6,14 +6,8 @@ Sébastien Klasa (skeggib)
 
 ## Compilation
 
-.class files are in folder *class/*.
+`./compile.sh`
 
-Compile .java file :
+## Tests
 
-`./javac.sh <java_file>`
-
-## Execution
-
-Change directory to *class/*, then :
-
-`java <class_path>`
+`./run_ann_tests.sh`
