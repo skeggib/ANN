@@ -1,4 +1,4 @@
-package com.skeggib.ANN.Core;
+package com.skeggib.ANN.Core.Neuron;
 
 public class NeuronHeaviside extends Neuron {
 
