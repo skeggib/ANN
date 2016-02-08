@@ -1,11 +1,11 @@
-package com.skeggib.ANN.Core;
+package com.skeggib.ANN.Core.Neuron;
 
 import junit.framework.*;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-import com.skeggib.ANN.Core.Neuron;
-import com.skeggib.ANN.Core.Input;
+import com.skeggib.ANN.Core.Neuron.Neuron;
+import com.skeggib.ANN.Core.Neuron.Input;
 
 import java.util.ArrayList;
 

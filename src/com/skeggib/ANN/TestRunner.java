@@ -6,10 +6,10 @@ import org.junit.runner.notification.Failure;
 
 import com.skeggib.Tools.TerminalMsg;
 
-import com.skeggib.ANN.Core.ActivationHeavisideTest;
-import com.skeggib.ANN.Core.ActivationSigmoidTest;
-import com.skeggib.ANN.Core.InputTest;
-import com.skeggib.ANN.Core.NeuronTest;
+import com.skeggib.ANN.Core.Neuron.ActivationHeavisideTest;
+import com.skeggib.ANN.Core.Neuron.ActivationSigmoidTest;
+import com.skeggib.ANN.Core.Neuron.InputTest;
+import com.skeggib.ANN.Core.Neuron.NeuronTest;
 
 public class TestRunner {
     public static void main(String[] args) {
