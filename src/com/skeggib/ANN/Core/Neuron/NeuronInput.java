@@ -1,5 +1,7 @@
 package com.skeggib.ANN.Core.Neuron;
 
+import java.util.Random;
+
 public class NeuronInput {
 
 	private Neuron neuron;
@@ -88,6 +90,10 @@ public class NeuronInput {
 			throw new Exception("NeuronInput has no neuron");
 
 		this.neuron.update();
+	}
+
+	public void randomizeWeight() throws Exception {
+		this.setWeight(new Random().nextDouble());
 	}
 
 	public void setNeuron(Neuron neuron) {

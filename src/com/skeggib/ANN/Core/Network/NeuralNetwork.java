@@ -67,6 +67,17 @@ public class NeuralNetwork {
 		}
 	}
 
+	public void randomizeWeights() throws Exception {
+		try {
+			for (int i = 0; i < this.layers.size(); i++) {
+				this.layers.get(i).randomizeWeights();
+			}
+		}
+		catch (Exception e) {
+			throw new Exception("Cannot randomize neural network weights", e);
+		}
+	}
+
 	public ArrayList<NeuralNetworkInput> getInputs() {
 		return this.inputs;
 	}

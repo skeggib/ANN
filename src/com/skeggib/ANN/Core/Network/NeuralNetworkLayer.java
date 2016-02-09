@@ -28,6 +28,12 @@ public class NeuralNetworkLayer {
 		this.setNextLayer(next_layer);
 	}
 
+	public void randomizeWeights() throws Exception {
+		for (int i = 0; i < this.neurons.size(); i++) {
+			this.neurons.get(i).randomizeWeights();
+		}
+	}
+
 	public void setNextLayer(NeuralNetworkLayer next_layer) {
 		this.next_layer = next_layer;
 

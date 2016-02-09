@@ -90,6 +90,12 @@ public class Neuron {
 		}
 	}
 
+	public void randomizeWeights() throws Exception {
+		for (int i = 0; i < this.inputs.size(); i++) {
+			this.inputs.get(i).randomizeWeight();
+		}
+	}
+
 	public void setThreshold(double threshold) {
 		this.threshold = threshold;
 	}
