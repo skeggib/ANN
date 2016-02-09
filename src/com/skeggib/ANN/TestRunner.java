@@ -12,6 +12,7 @@ import com.skeggib.ANN.Core.Neuron.NeuronInputTest;
 import com.skeggib.ANN.Core.Neuron.NeuronTest;
 
 import com.skeggib.ANN.Core.Network.NeuralNetworkLayerTest;
+import com.skeggib.ANN.Core.Network.NeuralNetworkInputTest;
 
 public class TestRunner {
     public static void main(String[] args) {
@@ -24,6 +25,7 @@ public class TestRunner {
 
         // Ann.Core.Network
         TestRunner.runTest(NeuralNetworkLayerTest.class);
+        TestRunner.runTest(NeuralNetworkInputTest.class);
     }
 
     private static void runTest(Class classes) {
