@@ -20,7 +20,7 @@ public class Neuron {
 		this.threshold = 0.0;
 		this.result = 0.0;
 		this.activation_func = new ActivationLinear();
-		this.sum_func = new SumCoefficient();
+		this.sum_func = new SumScalar();
 	}
 
 	/**

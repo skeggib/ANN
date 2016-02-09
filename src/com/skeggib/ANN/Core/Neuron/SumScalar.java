@@ -2,7 +2,7 @@ package com.skeggib.ANN.Core.Neuron;
 
 import java.util.ArrayList;
 
-public class SumCoefficient implements SumFunction {
+public class SumScalar implements SumFunction {
 
 	public double sum(ArrayList<NeuronInput> inputs) {
 		double sum = 0;
