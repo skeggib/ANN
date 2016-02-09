@@ -8,16 +8,8 @@ public class ActivationLinear implements ActivationFunction {
 		
 	}
 
-	public ActivationLinear(ActivationLinear linear) {
-		this();
-	}
-
 	public double activation(double input) {
 		return input;
-	}
-
-	public void setThreshold(double threshold) {
-		// Do nothing
 	}
 
 	public String toString() {

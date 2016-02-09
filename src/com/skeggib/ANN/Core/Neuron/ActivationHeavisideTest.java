@@ -21,18 +21,6 @@ public class ActivationHeavisideTest extends TestCase {
         assertEquals(0.0, heaviside.activation(-4));
         assertEquals(0.0, heaviside.activation(-4673927));
         assertEquals(0.0, heaviside.activation(-0.678));
-
-        heaviside.setThreshold(3.3);
-
-        assertEquals(1.0, heaviside.activation(3.3));
-
-        assertEquals(1.0, heaviside.activation(4));
-        assertEquals(1.0, heaviside.activation(4673927));
-        assertEquals(0.0, heaviside.activation(0.678));
-
-        assertEquals(0.0, heaviside.activation(-4));
-        assertEquals(0.0, heaviside.activation(-4673927));
-        assertEquals(0.0, heaviside.activation(-0.678));
     }
 
 }

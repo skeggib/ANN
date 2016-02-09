@@ -51,7 +51,7 @@ public class Neuron {
 	}
 
 	private double runSumFunction() {
-		return this.sum_func.sum(this.inputs);
+		return this.sum_func.sum(this.inputs, this.threshold);
 	}
 
 	private void runActivationFunction() throws Exception {

@@ -61,7 +61,7 @@ public class NeuronTest extends TestCase {
         input5.setValue(0.99);
         input5.arm();
 
-        assertEquals(12.5472, neuron.getResult());
+        assertEquals(12.0472, neuron.getResult());
     }
 
 }

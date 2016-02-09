@@ -11,6 +11,4 @@ public interface ActivationFunction {
 	 */
 	public double activation(double input);
 
-	public void setThreshold(double threshold);
-
 }
