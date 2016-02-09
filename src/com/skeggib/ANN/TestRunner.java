@@ -8,7 +8,7 @@ import com.skeggib.Tools.TerminalMsg;
 
 import com.skeggib.ANN.Core.Neuron.ActivationHeavisideTest;
 import com.skeggib.ANN.Core.Neuron.ActivationSigmoidTest;
-import com.skeggib.ANN.Core.Neuron.InputTest;
+import com.skeggib.ANN.Core.Neuron.NeuronInputTest;
 import com.skeggib.ANN.Core.Neuron.NeuronTest;
 
 import com.skeggib.ANN.Core.Network.NeuralNetworkLayerTest;
@@ -19,7 +19,7 @@ public class TestRunner {
         // ANN.Core.Neuron
         TestRunner.runTest(ActivationHeavisideTest.class);
         TestRunner.runTest(ActivationSigmoidTest.class);
-        TestRunner.runTest(InputTest.class);
+        TestRunner.runTest(NeuronInputTest.class);
         TestRunner.runTest(NeuronTest.class);
 
         // Ann.Core.Network

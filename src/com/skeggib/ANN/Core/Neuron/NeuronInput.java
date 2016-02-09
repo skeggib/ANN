@@ -1,6 +1,6 @@
 package com.skeggib.ANN.Core.Neuron;
 
-public class Input {
+public class NeuronInput {
 
 	private Neuron neuron;
 	private String name;
@@ -11,7 +11,7 @@ public class Input {
 	/**
 	 * Default constructor
 	 */
-	public Input() {
+	public NeuronInput() {
 		this.setNeuron(null);
 		this.setName("");
 		this.coefficient = 1.0;
@@ -22,9 +22,9 @@ public class Input {
 	/**
 	 * Name constructor
 	 *
-	 * @param      name  Input's name
+	 * @param      name  NeuronInput's name
 	 */
-	public Input(String name) {
+	public NeuronInput(String name) {
 		this();
 		this.setName(name);
 	}
@@ -32,11 +32,11 @@ public class Input {
 	/**
 	 * Coefficient constructor
 	 *
-	 * @param      coefficient  Input's coefficient
+	 * @param      coefficient  NeuronInput's coefficient
 	 * 
 	 * @throws     Exception If coefficient is not between 0 and 1
 	 */
-	public Input(double coefficient) throws Exception {
+	public NeuronInput(double coefficient) throws Exception {
 		this();
 		this.setCoefficient(coefficient);
 	}
@@ -44,12 +44,12 @@ public class Input {
 	/**
 	 * Name and coefficient constructor
 	 *
-	 * @param      name         Input's name
-	 * @param      coefficient  Input's coefficient
+	 * @param      name         NeuronInput's name
+	 * @param      coefficient  NeuronInput's coefficient
 	 * 
 	 * @throws     Exception  If coefficient is not between 0 and 1
 	 */
-	public Input(String name, double coefficient) throws Exception {
+	public NeuronInput(String name, double coefficient) throws Exception {
 		this(name);
 		this.setCoefficient(coefficient);
 	}
@@ -85,7 +85,7 @@ public class Input {
 	 */
 	private void notifyNeuron() throws Exception {
 		if (this.neuron == null)
-			throw new Exception("Input has no neuron");
+			throw new Exception("NeuronInput has no neuron");
 
 		this.neuron.update();
 	}

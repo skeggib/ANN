@@ -4,6 +4,6 @@ import java.util.ArrayList;
 
 public interface SumFunction {
 
-	public double sum(ArrayList<Input> inputs);
+	public double sum(ArrayList<NeuronInput> inputs);
 
 }

@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 
 import com.skeggib.ANN.Core.Neuron.Neuron;
-import com.skeggib.ANN.Core.Neuron.Input;
+import com.skeggib.ANN.Core.Neuron.NeuronInput;
 
 import com.skeggib.ANN.Core.Network.NeuralNetworkLayer;
 
@@ -54,7 +54,7 @@ public class NeuralNetworkLayerTest extends TestCase {
                 // dans current_first.getNextInputs()
                 int inputs_in_nextInputs = 0;
                 for (int k = 0; k < current_next.getInputs().size(); k++) {
-                    Input current_input_next = current_next.getInputs().get(k);
+                    NeuronInput current_input_next = current_next.getInputs().get(k);
 
                     // Si l'entree de current_next est dans
                     // current_first.nextInputs()

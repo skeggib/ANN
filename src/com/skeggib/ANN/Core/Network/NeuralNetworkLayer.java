@@ -3,7 +3,7 @@ package com.skeggib.ANN.Core.Network;
 import java.util.ArrayList;
 
 import com.skeggib.ANN.Core.Neuron.Neuron;
-import com.skeggib.ANN.Core.Neuron.Input;
+import com.skeggib.ANN.Core.Neuron.NeuronInput;
 
 public class NeuralNetworkLayer {
 
@@ -33,7 +33,7 @@ public class NeuralNetworkLayer {
 		// Supprimer tout les liens entre les sorties des neurones et les
 		// entrees d'autres
 		for (int i = 0; i < this.neurons.size(); i++) {
-			this.neurons.get(i).setNextInputs(new ArrayList<Input>());
+			this.neurons.get(i).setNextInputs(new ArrayList<NeuronInput>());
 		}
 
 		// Creer les liens entre les neurones et les entrees des neurones
@@ -46,7 +46,7 @@ public class NeuralNetworkLayer {
 			// Pour chaque neurone de la couche suivante
 			for (int j = 0; j < next_layer.getNeurons().size(); j++) {
 				Neuron next_layer_neuron = next_layer.getNeurons().get(j);
-				Input input = new Input();
+				NeuronInput input = new NeuronInput();
 
 				// On ajoute l'entree au neurone de la couche suivante
 				next_layer_neuron.addInput(input);

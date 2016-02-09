@@ -4,9 +4,6 @@ import junit.framework.*;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-import com.skeggib.ANN.Core.Neuron.Neuron;
-import com.skeggib.ANN.Core.Neuron.Input;
-
 import java.util.ArrayList;
 
 public class NeuronTest extends TestCase {
@@ -39,11 +36,11 @@ public class NeuronTest extends TestCase {
     }
 
     public void test_update() throws Exception {
-        Input input1 = new Input("input1", 0.5);
-        Input input2 = new Input("input2", 1);
-        Input input3 = new Input("input3", 0.2);
-        Input input4 = new Input("input4", 0.89);
-        Input input5 = new Input("input5", 0.33);
+        NeuronInput input1 = new NeuronInput("input1", 0.5);
+        NeuronInput input2 = new NeuronInput("input2", 1);
+        NeuronInput input3 = new NeuronInput("input3", 0.2);
+        NeuronInput input4 = new NeuronInput("input4", 0.89);
+        NeuronInput input5 = new NeuronInput("input5", 0.33);
 
         Neuron neuron = new Neuron(0.5);
 

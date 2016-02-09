@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Neuron {
 
-	private ArrayList<Input> inputs;
-	private ArrayList<Input> next_inputs;
+	private ArrayList<NeuronInput> inputs;
+	private ArrayList<NeuronInput> next_inputs;
 	private double threshold;
 	private double result;
 	private ActivationFunction activation_func;
@@ -15,8 +15,8 @@ public class Neuron {
 	 * Default contructor
 	 */
 	public Neuron() {
-		this.inputs = new ArrayList<Input>();
-		this.next_inputs = new ArrayList<Input>();
+		this.inputs = new ArrayList<NeuronInput>();
+		this.next_inputs = new ArrayList<NeuronInput>();
 		this.threshold = 0.0;
 		this.result = 0.0;
 		this.activation_func = new ActivationLinear();
@@ -42,7 +42,7 @@ public class Neuron {
 	public Neuron(double threshold, int inputs_count) {
 		this(threshold);
 		for (int i = 0; i < inputs_count; i++) {
-			this.addInput(new Input());
+			this.addInput(new NeuronInput());
 		}
 	}
 
@@ -59,7 +59,7 @@ public class Neuron {
 		this.result = this.activation_func.activation(sum);
 		// Update all next inputs value
 		for (int i = 0; i < this.next_inputs.size(); i++) {
-			Input current = this.next_inputs.get(i);
+			NeuronInput current = this.next_inputs.get(i);
 			current.setValue(this.result);
 			try {
 				current.arm();
@@ -104,49 +104,49 @@ public class Neuron {
 
 	/* --- inputs --- */
 
-	public ArrayList<Input> getInputs() {
+	public ArrayList<NeuronInput> getInputs() {
 		return this.inputs;
 	}
 
-	public void setInputs(ArrayList<Input> inputs) {
+	public void setInputs(ArrayList<NeuronInput> inputs) {
 		for (int i = 0; i < this.inputs.size(); i++) {
-			Input current = this.inputs.get(i);
+			NeuronInput current = this.inputs.get(i);
 			this.removeInput(current);
 		}
 
 		for (int i = 0; i < inputs.size(); i++) {
-			Input current = inputs.get(i);
+			NeuronInput current = inputs.get(i);
 			this.addInput(current);
 		}
 	}
 
-	public void addInput(Input input) {
+	public void addInput(NeuronInput input) {
 		if (input.getNeuron() != null)
 			input.getNeuron().removeInput(input);
 		this.inputs.add(input);
 		input.setNeuron(this);
 	}
 
-	public void removeInput(Input input) {
+	public void removeInput(NeuronInput input) {
 		input.setNeuron(null);
 		this.inputs.remove(input);
 	}
 
-	public ArrayList<Input> getNextInputs() {
+	public ArrayList<NeuronInput> getNextInputs() {
 		return this.next_inputs;
 	}
 
 	/* --- next inputs --- */
 
-	public void setNextInputs(ArrayList<Input> inputs) {
+	public void setNextInputs(ArrayList<NeuronInput> inputs) {
 		this.next_inputs = inputs;
 	}
 
-	public void addNextInput(Input input) {
+	public void addNextInput(NeuronInput input) {
 		this.next_inputs.add(input);
 	}
 
-	public void removeNextInput(Input input) {
+	public void removeNextInput(NeuronInput input) {
 		this.next_inputs.remove(input);
 	}
 
