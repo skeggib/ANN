@@ -29,4 +29,8 @@ public class ActivationHeaviside implements ActivationFunction {
 		this.threshold = threshold;
 	}
 
+	public String toString() {
+		return "Heaviside";
+	}
+
 }

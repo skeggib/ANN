@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.skeggib.ANN.Core.Neuron.Neuron;
 import com.skeggib.ANN.Core.Neuron.NeuronInput;
+import com.skeggib.ANN.Core.Neuron.NeuronFactory;
 
 public class NeuralNetworkLayer {
 
@@ -15,15 +16,15 @@ public class NeuralNetworkLayer {
 		this.next_layer = null;
 	}
 
-	public NeuralNetworkLayer(int neurons_count) {
+	public NeuralNetworkLayer(int neurons_count, NeuronFactory neuron_factory) {
 		this();
 		for (int i = 0; i < neurons_count; i++) {
-			this.neurons.add(new Neuron());
+			this.neurons.add(neuron_factory.createNeuron());
 		}
 	}
 
-	public NeuralNetworkLayer(int neurons_count, NeuralNetworkLayer next_layer) {
-		this(neurons_count);
+	public NeuralNetworkLayer(int neurons_count, NeuronFactory neuron_factory, NeuralNetworkLayer next_layer) {
+		this(neurons_count, neuron_factory);
 		this.setNextLayer(next_layer);
 	}
 
@@ -63,6 +64,16 @@ public class NeuralNetworkLayer {
 
 	public ArrayList<Neuron> getNeurons() {
 		return this.neurons;
+	}
+
+	public String toString() {
+		String str = "";
+
+		for (int i = 0; i < this.neurons.size(); i++) {
+			str += this.neurons.get(i).toString() + "\n";
+		}
+
+		return str;
 	}
 
 }

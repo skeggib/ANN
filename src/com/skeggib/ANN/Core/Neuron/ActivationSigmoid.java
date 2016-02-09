@@ -20,4 +20,8 @@ public class ActivationSigmoid implements ActivationFunction {
 		// Do nothing
 	}
 
+	public String toString() {
+		return "Sigmoid";
+	}
+
 }

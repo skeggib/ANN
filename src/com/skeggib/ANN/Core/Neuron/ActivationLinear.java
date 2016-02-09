@@ -20,4 +20,8 @@ public class ActivationLinear implements ActivationFunction {
 		// Do nothing
 	}
 
+	public String toString() {
+		return "Linear";
+	}
+
 }

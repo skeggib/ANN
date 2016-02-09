@@ -160,4 +160,20 @@ public class Neuron {
 		this.sum_func = sum_func;
 	}
 
+	public String toString() {
+		String str = "";
+
+		str += "Neuron(" + this.activation_func.toString() + ")";
+		str += " --- Inputs: [";
+		for (int i = 0; i < this.inputs.size(); i++) {
+			NeuronInput current = this.inputs.get(i);
+			str += "(v: " + current.getValue() + ", c: " + current.getCoefficient() + ") ";
+		}
+		str += "]";
+
+		str += " --- Result: " + this.getResult();
+
+		return str;
+	}
+
 }
