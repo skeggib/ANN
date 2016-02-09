@@ -8,7 +8,7 @@ public class SumCoefficient implements SumFunction {
 		double sum = 0;
 		for (int i = 0; i < inputs.size(); i++) {
 			NeuronInput current = inputs.get(i);
-			sum += current.getValue() * current.getCoefficient();
+			sum += current.getValue() * current.getWeight();
 		}
 		return sum;
 	}

@@ -4,7 +4,7 @@ public class NeuronInput {
 
 	private Neuron neuron;
 	private String name;
-	private double coefficient;
+	private double weight;
 	private double value;
 	private boolean ready;
 
@@ -14,7 +14,7 @@ public class NeuronInput {
 	public NeuronInput() {
 		this.setNeuron(null);
 		this.setName("");
-		this.coefficient = 1.0;
+		this.weight = 1.0;
 		this.setValue(0.0);
 		this.ready = false;
 	}
@@ -30,28 +30,28 @@ public class NeuronInput {
 	}
 
 	/**
-	 * Coefficient constructor
+	 * Weight constructor
 	 *
-	 * @param      coefficient  NeuronInput's coefficient
+	 * @param      weight  NeuronInput's weight
 	 * 
-	 * @throws     Exception If coefficient is not between 0 and 1
+	 * @throws     Exception If weight is not between 0 and 1
 	 */
-	public NeuronInput(double coefficient) throws Exception {
+	public NeuronInput(double weight) throws Exception {
 		this();
-		this.setCoefficient(coefficient);
+		this.setWeight(weight);
 	}
 
 	/**
-	 * Name and coefficient constructor
+	 * Name and weight constructor
 	 *
 	 * @param      name         NeuronInput's name
-	 * @param      coefficient  NeuronInput's coefficient
+	 * @param      weight  NeuronInput's weight
 	 * 
-	 * @throws     Exception  If coefficient is not between 0 and 1
+	 * @throws     Exception  If weight is not between 0 and 1
 	 */
-	public NeuronInput(String name, double coefficient) throws Exception {
+	public NeuronInput(String name, double weight) throws Exception {
 		this(name);
-		this.setCoefficient(coefficient);
+		this.setWeight(weight);
 	}
 
 	/**
@@ -106,17 +106,17 @@ public class NeuronInput {
 		return this.name;
 	}
 
-	public void setCoefficient(double coefficient) throws Exception {
-		if (coefficient > 1)
-			throw new Exception("Coefficient cannot be greater than 1");
-		if (coefficient < 0)
-			throw new Exception("Coefficient cannot be less than 0");
+	public void setWeight(double weight) throws Exception {
+		if (weight > 1)
+			throw new Exception("Weight cannot be greater than 1");
+		if (weight < 0)
+			throw new Exception("Weight cannot be less than 0");
 
-		this.coefficient = coefficient;
+		this.weight = weight;
 	}
 
-	public double getCoefficient() {
-		return this.coefficient;
+	public double getWeight() {
+		return this.weight;
 	}
 
 	public void setValue(double value) {

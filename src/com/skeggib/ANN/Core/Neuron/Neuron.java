@@ -167,7 +167,7 @@ public class Neuron {
 		str += " --- Inputs: [";
 		for (int i = 0; i < this.inputs.size(); i++) {
 			NeuronInput current = this.inputs.get(i);
-			str += "(v: " + current.getValue() + ", c: " + current.getCoefficient() + ") ";
+			str += "(v: " + current.getValue() + ", c: " + current.getWeight() + ") ";
 		}
 		str += "]";
 

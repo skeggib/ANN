@@ -15,7 +15,7 @@ public class NeuronInputTest extends TestCase {
         NeuronInput input = new NeuronInput();
         assertEquals(null, input.getNeuron());
         assertEquals("", input.getName());
-        assertEquals(1.0, input.getCoefficient());
+        assertEquals(1.0, input.getWeight());
         assertEquals(0.0, input.getValue());
         assertEquals(false, input.isReady());
     }
@@ -24,7 +24,7 @@ public class NeuronInputTest extends TestCase {
         NeuronInput input = new NeuronInput("foo");
         assertEquals(null, input.getNeuron());
         assertEquals("foo", input.getName());
-        assertEquals(1.0, input.getCoefficient());
+        assertEquals(1.0, input.getWeight());
         assertEquals(0.0, input.getValue());
         assertEquals(false, input.isReady());
     }
@@ -33,7 +33,7 @@ public class NeuronInputTest extends TestCase {
         NeuronInput input = new NeuronInput("bar", 0.5);
         assertEquals(null, input.getNeuron());
         assertEquals("bar", input.getName());
-        assertEquals(0.5, input.getCoefficient());
+        assertEquals(0.5, input.getWeight());
         assertEquals(0.0, input.getValue());
         assertEquals(false, input.isReady());
     }
@@ -51,31 +51,31 @@ public class NeuronInputTest extends TestCase {
         assertEquals("foo", input.getName());
     }
 
-    public void test_setCoefficient_with_exception_greater_one() throws Exception {
+    public void test_setWeight_with_exception_greater_one() throws Exception {
         NeuronInput input = new NeuronInput();
         try {
-            input.setCoefficient(1.89);
-            fail("setCoefficient did not throw Exception");
+            input.setWeight(1.89);
+            fail("setWeight did not throw Exception");
         } catch (Exception e) {
 
         }
     }
 
     @Test(expected = Exception.class)
-    public void test_setCoefficient_with_exception_less_zero() throws Exception {
+    public void test_setWeight_with_exception_less_zero() throws Exception {
         NeuronInput input = new NeuronInput();
         try {
-            input.setCoefficient(-0.1);
-            fail("setCoefficient did not throw Exception");
+            input.setWeight(-0.1);
+            fail("setWeight did not throw Exception");
         } catch (Exception e) {
 
         }
     }
 
-    public void test_setCoefficient_without_exception() throws Exception {
+    public void test_setWeight_without_exception() throws Exception {
         NeuronInput input = new NeuronInput();
-        input.setCoefficient(0.33);
-        assertEquals(0.33, input.getCoefficient());
+        input.setWeight(0.33);
+        assertEquals(0.33, input.getWeight());
     }
 
     public void test_setValue() throws Exception {
