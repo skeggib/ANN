@@ -193,18 +193,29 @@ public class Neuron implements Observable {
 		this.sum_func = sum_func;
 	}
 
+	/* --- tostring --- */
+
 	public String toString() {
+		return this.toString(4);
+	}
+
+	public String toString(int decimals) {
 		String str = "";
+		double dec_mult = Math.pow(10, decimals);
 
 		str += "Neuron(" + this.activation_func.toString() + ")";
 		str += " --- Inputs: [";
 		for (int i = 0; i < this.inputs.size(); i++) {
 			NeuronInput current = this.inputs.get(i);
-			str += "(v: " + current.getValue() + ", c: " + current.getWeight() + ") ";
+			str += "(v: ";
+			str += Math.round(current.getValue() * dec_mult) / dec_mult;
+			str += ", c: ";
+			str += Math.round(current.getWeight() * dec_mult) / dec_mult;
+			str += ") ";
 		}
 		str += "]";
 
-		str += " --- Result: " + this.getResult();
+		str += " --- Result: " + Math.round(this.getResult() * dec_mult) / dec_mult;
 
 		return str;
 	}
