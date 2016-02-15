@@ -6,8 +6,8 @@ import org.junit.runner.notification.Failure;
 
 import com.skeggib.Tools.TerminalMsg;
 
-import com.skeggib.ANN.Core.Neuron.ActivationHeavisideTest;
-import com.skeggib.ANN.Core.Neuron.ActivationSigmoidTest;
+import com.skeggib.ANN.Core.Neuron.Activation.ActivationHeavisideTest;
+import com.skeggib.ANN.Core.Neuron.Activation.ActivationSigmoidTest;
 import com.skeggib.ANN.Core.Neuron.NeuronInputTest;
 import com.skeggib.ANN.Core.Neuron.NeuronTest;
 

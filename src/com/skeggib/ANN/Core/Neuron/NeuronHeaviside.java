@@ -1,5 +1,7 @@
 package com.skeggib.ANN.Core.Neuron;
 
+import com.skeggib.ANN.Core.Neuron.Activation.ActivationHeaviside;
+
 public class NeuronHeaviside extends Neuron {
 
 	public NeuronHeaviside() {

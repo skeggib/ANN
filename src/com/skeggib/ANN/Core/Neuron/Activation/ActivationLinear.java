@@ -1,4 +1,4 @@
-package com.skeggib.ANN.Core.Neuron;
+package com.skeggib.ANN.Core.Neuron.Activation;
 
 public class ActivationLinear implements ActivationFunction {
 

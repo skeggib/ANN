@@ -62,6 +62,7 @@ public class NeuronTest extends TestCase {
         input5.arm();
 
         assertEquals(12.0472, neuron.getResult());
+        assertEquals(true, neuron.isActive());
     }
 
 }

@@ -1,11 +1,8 @@
-package com.skeggib.ANN.Core.Neuron;
+package com.skeggib.ANN.Core.Neuron.Activation;
 
 import junit.framework.*;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
-
-import com.skeggib.ANN.Core.Neuron.ActivationFunction;
-import com.skeggib.ANN.Core.Neuron.ActivationSigmoid;
 
 import java.util.ArrayList;
 

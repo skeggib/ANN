@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import com.skeggib.ObserverPattern.Observer;
 import com.skeggib.ObserverPattern.Observable;
 import com.skeggib.Tools.MathHelper;
+import com.skeggib.ANN.Core.Neuron.Activation.ActivationFunction;
+import com.skeggib.ANN.Core.Neuron.Activation.ActivationLinear;
 
 public class Neuron implements Observable {
 
