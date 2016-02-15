@@ -1,6 +1,8 @@
-package com.skeggib.ANN.Core.Neuron;
+package com.skeggib.ANN.Core.Neuron.Sum;
 
 import java.util.ArrayList;
+
+import com.skeggib.ANN.Core.Neuron.NeuronInput;
 
 public interface SumFunction {
 

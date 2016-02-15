@@ -7,6 +7,8 @@ import com.skeggib.ObserverPattern.Observable;
 import com.skeggib.Tools.MathHelper;
 import com.skeggib.ANN.Core.Neuron.Activation.ActivationFunction;
 import com.skeggib.ANN.Core.Neuron.Activation.ActivationLinear;
+import com.skeggib.ANN.Core.Neuron.Sum.SumFunction;
+import com.skeggib.ANN.Core.Neuron.Sum.SumScalar;
 
 public class Neuron implements Observable {
 
