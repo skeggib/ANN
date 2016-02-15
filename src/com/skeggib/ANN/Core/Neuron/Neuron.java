@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.skeggib.ObserverPattern.Observer;
 import com.skeggib.ObserverPattern.Observable;
+import com.skeggib.Tools.MathHelper;
 
 public class Neuron implements Observable {
 
@@ -201,21 +202,20 @@ public class Neuron implements Observable {
 
 	public String toString(int decimals) {
 		String str = "";
-		double dec_mult = Math.pow(10, decimals);
 
 		str += "Neuron(" + this.activation_func.toString() + ")";
 		str += " --- Inputs: [";
 		for (int i = 0; i < this.inputs.size(); i++) {
 			NeuronInput current = this.inputs.get(i);
 			str += "(v: ";
-			str += Math.round(current.getValue() * dec_mult) / dec_mult;
+			str += MathHelper.round(current.getValue(), decimals);
 			str += ", c: ";
-			str += Math.round(current.getWeight() * dec_mult) / dec_mult;
+			str += MathHelper.round(current.getWeight(), decimals);
 			str += ") ";
 		}
 		str += "]";
 
-		str += " --- Result: " + Math.round(this.getResult() * dec_mult) / dec_mult;
+		str += " --- Result: " + MathHelper.round(this.getResult(), decimals);
 
 		return str;
 	}
