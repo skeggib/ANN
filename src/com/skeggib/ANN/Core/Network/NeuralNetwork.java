@@ -3,7 +3,7 @@ package com.skeggib.ANN.Core.Network;
 import java.util.ArrayList;
 
 import com.skeggib.ANN.Core.Neuron.Neuron;
-import com.skeggib.ANN.Core.Neuron.NeuronFactory;
+import com.skeggib.ANN.Core.Neuron.Factory.NeuronFactory;
 import com.skeggib.ObserverPattern.Observer;
 import com.skeggib.ObserverPattern.Observable;
 

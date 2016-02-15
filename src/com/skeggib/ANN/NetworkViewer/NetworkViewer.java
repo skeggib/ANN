@@ -5,8 +5,7 @@ import java.util.Random;
 
 import com.skeggib.ANN.Core.Network.NeuralNetwork;
 import com.skeggib.ANN.Core.Network.NeuralNetworkInput;
-import com.skeggib.ANN.Core.Neuron.NeuronFactory;
-import com.skeggib.ANN.Core.Neuron.NeuronSigmoidFactory;
+import com.skeggib.ANN.Core.Neuron.Factory.*;
 import com.skeggib.Tools.StopWatch;
 import com.skeggib.Tools.TerminalMsg;
 

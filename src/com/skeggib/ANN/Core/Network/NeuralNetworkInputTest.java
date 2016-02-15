@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import com.skeggib.ANN.Core.Neuron.Neuron;
 import com.skeggib.ANN.Core.Neuron.NeuronInput;
-import com.skeggib.ANN.Core.Neuron.NeuronFactory;
+import com.skeggib.ANN.Core.Neuron.Factory.NeuronFactory;
 
 import com.skeggib.ANN.Core.Network.NeuralNetworkInput;
 
