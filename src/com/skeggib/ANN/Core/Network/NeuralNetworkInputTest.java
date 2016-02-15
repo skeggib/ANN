@@ -73,23 +73,4 @@ public class NeuralNetworkInputTest extends TestCase {
         }
     }
 
-    public void test_arm_disarm() throws Exception {
-        NeuralNetworkInput input = new NeuralNetworkInput();
-        NeuralNetworkLayer layer = new NeuralNetworkLayer(6, new NeuronFactory());
-
-        input.setNeuralNetworkLayer(layer);
-
-        input.arm();
-
-        for (int i = 0; i < input.getNeuronInputs().size(); i++) {
-            assertEquals(true, input.getNeuronInputs().get(i).isReady());
-        }
-
-        input.disarm();
-
-        for (int i = 0; i < input.getNeuronInputs().size(); i++) {
-            assertEquals(false, input.getNeuronInputs().get(i).isReady());
-        }
-    }
-
 }

@@ -68,11 +68,11 @@ do
 			javac -sourcepath $SOURCEPATH -cp $CLASSPATH -d $class_folder $java_file
 			printf "\r\033[2K"
 			printf "\033[1;32m"
-			printf "$java_file\n"
+			#printf "$java_file\n"
 		else
 			printf "\r\033[2K"
 			printf "\033[1;34m"
-			printf "$java_file\n"
+			#printf "$java_file\n"
 		fi
 	# Si le .class n'existe pas
 	else
@@ -80,7 +80,7 @@ do
 		javac -sourcepath $SOURCEPATH -cp $CLASSPATH -d $class_folder $java_file
 		printf "\r\033[2K"
 		printf "\033[1;32m"
-		printf "$java_file\n"
+		#printf "$java_file\n"
 	fi
 
 

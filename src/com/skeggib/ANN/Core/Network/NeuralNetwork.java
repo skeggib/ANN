@@ -4,13 +4,17 @@ import java.util.ArrayList;
 
 import com.skeggib.ANN.Core.Neuron.Neuron;
 import com.skeggib.ANN.Core.Neuron.NeuronFactory;
+import com.skeggib.ObserverPattern.Observer;
+import com.skeggib.ObserverPattern.Observable;
 
-public class NeuralNetwork {
+public class NeuralNetwork implements Observer, Observable {
 
 	private ArrayList<NeuralNetworkLayer> layers;
 	private ArrayList<NeuralNetworkInput> inputs;
 	private ArrayList<NeuralNetworkOutput> outputs;
 	private NeuronFactory neuron_factory;
+
+	private ArrayList<Observer> observers;
 
 	public NeuralNetwork(int inputs_count, ArrayList<Integer> layers_sizes, NeuronFactory neuron_factory) {
 		this.neuron_factory = neuron_factory;
@@ -18,9 +22,29 @@ public class NeuralNetwork {
 		this.inputs = new ArrayList<NeuralNetworkInput>();
 		this.outputs = new ArrayList<NeuralNetworkOutput>();
 
+		this.observers = new ArrayList<Observer>();
+
 		this.createLayers(layers_sizes, neuron_factory);
 		this.createInputs(inputs_count);
 		this.createOutputs();
+	}
+
+	public void registerObserver(Observer o) {
+		this.observers.add(o);
+	}
+
+	public void unregisterObserver(Observer o) {
+		this.observers.remove(o);
+	}
+
+	public void notifyObservers() {
+		for (int i = 0; i < this.observers.size(); i++) {
+			this.observers.get(i).update();
+		}
+	}
+
+	public void update() {
+		this.notifyObservers();
 	}
 
 	private void createLayers(ArrayList<Integer> layers_sizes, NeuronFactory neuron_factory) {
@@ -53,6 +77,7 @@ public class NeuralNetwork {
 		for (int i = 0; i < inputs_count; i++) {
 			NeuralNetworkInput input = new NeuralNetworkInput();
 			input.setNeuralNetworkLayer(this.layers.get(0));
+			input.registerObserver(this);
 			this.inputs.add(input);
 		}
 	}
@@ -63,6 +88,7 @@ public class NeuralNetwork {
 			Neuron current_neuron = last_layer.getNeurons().get(i);	
 			NeuralNetworkOutput output = new NeuralNetworkOutput();
 			output.setNeuron(current_neuron);
+			output.registerObserver(this);
 			this.outputs.add(output);	
 		}
 	}
@@ -76,6 +102,8 @@ public class NeuralNetwork {
 		catch (Exception e) {
 			throw new Exception("Cannot randomize neural network weights", e);
 		}
+
+		this.notifyObservers();
 	}
 
 	public ArrayList<NeuralNetworkInput> getInputs() {
@@ -108,6 +136,10 @@ public class NeuralNetwork {
 		}
 
 		return str;
+	}
+
+	public ArrayList<NeuralNetworkLayer> getLayers() {
+		return this.layers;
 	}
 
 }

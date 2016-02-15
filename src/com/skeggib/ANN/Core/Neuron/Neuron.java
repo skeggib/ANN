@@ -2,7 +2,10 @@ package com.skeggib.ANN.Core.Neuron;
 
 import java.util.ArrayList;
 
-public class Neuron {
+import com.skeggib.ObserverPattern.Observer;
+import com.skeggib.ObserverPattern.Observable;
+
+public class Neuron implements Observable {
 
 	private ArrayList<NeuronInput> inputs;
 	private ArrayList<NeuronInput> next_inputs;
@@ -10,6 +13,8 @@ public class Neuron {
 	private double result;
 	private ActivationFunction activation_func;
 	private SumFunction sum_func;
+
+	private ArrayList<Observer> observers;
 
 	/**
 	 * Default contructor
@@ -21,6 +26,8 @@ public class Neuron {
 		this.result = 0.0;
 		this.activation_func = new ActivationLinear();
 		this.sum_func = new SumScalar();
+		
+		this.observers = new ArrayList<Observer>();
 	}
 
 	/**
@@ -46,6 +53,20 @@ public class Neuron {
 		}
 	}
 
+	public void registerObserver(Observer o) {
+		this.observers.add(o);
+	}
+
+	public void unregisterObserver(Observer o) {
+		this.observers.remove(o);
+	}
+
+	public void notifyObservers() {
+		for (int i = 0; i < this.observers.size(); i++) {
+			this.observers.get(i).update();
+		}
+	}
+
 	public boolean isActive() {
 		return this.result >= this.threshold;
 	}
@@ -67,6 +88,12 @@ public class Neuron {
 				throw new Exception("Cannot arm input", e);
 			}
 		}
+
+		for (int i = 0; i < this.inputs.size(); i++) {
+			this.inputs.get(i).disarm();
+		}
+
+		this.notifyObservers();
 	}
 
 	/**
@@ -74,7 +101,7 @@ public class Neuron {
 	 *
 	 * @throws     Exception  If activation function cannot be run
 	 */
-	public void update() throws Exception {
+	public void checkInputs() throws Exception {
 		boolean all_inputs_ready = true;
 		// Check if all inputs are ready
 		for (int i = 0; i < this.inputs.size(); i++) {

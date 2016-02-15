@@ -89,7 +89,7 @@ public class NeuronInput {
 		if (this.neuron == null)
 			throw new Exception("NeuronInput has no neuron");
 
-		this.neuron.update();
+		this.neuron.checkInputs();
 	}
 
 	public void randomizeWeight() throws Exception {

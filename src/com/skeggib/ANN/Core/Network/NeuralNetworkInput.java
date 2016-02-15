@@ -4,19 +4,38 @@ import java.util.ArrayList;
 
 import com.skeggib.ANN.Core.Neuron.Neuron;
 import com.skeggib.ANN.Core.Neuron.NeuronInput;
+import com.skeggib.ObserverPattern.Observer;
+import com.skeggib.ObserverPattern.Observable;
 
-public class NeuralNetworkInput {
+public class NeuralNetworkInput implements Observable {
 
 	private ArrayList<NeuronInput> neuron_inputs;
 	private double value;
 	private NeuralNetworkLayer layer;
 	private boolean ready;
 
+	private ArrayList<Observer> observers;
+
 	public NeuralNetworkInput() {
 		this.neuron_inputs = new ArrayList<NeuronInput>();
+		this.observers = new ArrayList<Observer>();
 		this.setValue(0.0);
 		this.layer = null;
 		this.ready = false;
+	}
+
+	public void registerObserver(Observer o) {
+		this.observers.add(o);
+	}
+
+	public void unregisterObserver(Observer o) {
+		this.observers.remove(o);
+	}
+
+	public void notifyObservers() {
+		for (int i = 0; i < this.observers.size(); i++) {
+			this.observers.get(i).update();
+		}
 	}
 
 	public void arm() throws Exception {
@@ -59,6 +78,8 @@ public class NeuralNetworkInput {
 		for (int i = 0; i < this.neuron_inputs.size(); i++) {
 			this.neuron_inputs.get(i).setValue(value);
 		}
+
+		this.notifyObservers();
 	}
 
 	public double getValue() {
