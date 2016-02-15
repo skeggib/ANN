@@ -6,10 +6,12 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 
-public class NeuronTest extends TestCase {
+import com.skeggib.ANN.Core.Neuron.NeuronLinear;
+
+public class NeuronLinearTest extends TestCase {
 
     public void test_default_constructor() {
-        Neuron neuron = new Neuron();
+        Neuron neuron = new NeuronLinear();
         assertEquals(0, neuron.getInputs().size());
         assertEquals(0, neuron.getNextInputs().size());
         assertEquals(true, neuron.isActive());
@@ -18,7 +20,7 @@ public class NeuronTest extends TestCase {
     }
 
     public void test_threshold_constructor() {
-        Neuron neuron = new Neuron(0.5);
+        Neuron neuron = new NeuronLinear(0.5);
         assertEquals(0, neuron.getInputs().size());
         assertEquals(0, neuron.getNextInputs().size());
         assertEquals(false, neuron.isActive());
@@ -27,7 +29,7 @@ public class NeuronTest extends TestCase {
     }
 
     public void test_threshold_inputsCount_constructor() {
-        Neuron neuron = new Neuron(0.5, 5);
+        Neuron neuron = new NeuronLinear(0.5, 5);
         assertEquals(5, neuron.getInputs().size());
         assertEquals(0, neuron.getNextInputs().size());
         assertEquals(false, neuron.isActive());
@@ -42,7 +44,7 @@ public class NeuronTest extends TestCase {
         NeuronInput input4 = new NeuronInput("input4", 0.89);
         NeuronInput input5 = new NeuronInput("input5", 0.33);
 
-        Neuron neuron = new Neuron(0.5);
+        Neuron neuron = new NeuronLinear(0.5);
 
         neuron.addInput(input1);
         neuron.addInput(input2);

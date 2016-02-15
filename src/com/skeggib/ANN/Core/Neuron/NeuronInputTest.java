@@ -39,7 +39,7 @@ public class NeuronInputTest extends TestCase {
     }
 
     public void test_setNeuron() throws Exception {
-        Neuron neuron = new Neuron();
+        Neuron neuron = new NeuronLinear();
         NeuronInput input = new NeuronInput();
         input.setNeuron(neuron);
         assertEquals(neuron, input.getNeuron());
@@ -98,14 +98,14 @@ public class NeuronInputTest extends TestCase {
 
     public void test_arm_without_exception() throws Exception {
         NeuronInput input = new NeuronInput();
-        input.setNeuron(new Neuron());
+        input.setNeuron(new NeuronLinear());
         input.arm();
         assertEquals(true, input.isReady());
     }
 
     public void test_disarm() throws Exception {
         NeuronInput input = new NeuronInput();
-        input.setNeuron(new Neuron());
+        input.setNeuron(new NeuronLinear());
         input.arm();
         input.disarm();
         assertEquals(false, input.isReady());

@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import com.skeggib.ANN.Core.Neuron.Neuron;
 import com.skeggib.ANN.Core.Neuron.NeuronInput;
-import com.skeggib.ANN.Core.Neuron.Factory.NeuronFactory;
+import com.skeggib.ANN.Core.Neuron.Factory.NeuronLinearFactory;
 
 import com.skeggib.ANN.Core.Network.NeuralNetworkInput;
 
@@ -23,7 +23,7 @@ public class NeuralNetworkInputTest extends TestCase {
     }
 
     public void test_setNeuralNetworkLayer() {
-        NeuralNetworkLayer layer = new NeuralNetworkLayer(4, new NeuronFactory());
+        NeuralNetworkLayer layer = new NeuralNetworkLayer(4, new NeuronLinearFactory());
         NeuralNetworkInput input1 = new NeuralNetworkInput();
         NeuralNetworkInput input2 = new NeuralNetworkInput();
         input1.setNeuralNetworkLayer(layer);
@@ -60,7 +60,7 @@ public class NeuralNetworkInputTest extends TestCase {
 
     public void test_setValue() {
         NeuralNetworkInput input = new NeuralNetworkInput();
-        NeuralNetworkLayer layer = new NeuralNetworkLayer(2, new NeuronFactory());
+        NeuralNetworkLayer layer = new NeuralNetworkLayer(2, new NeuronLinearFactory());
 
         input.setNeuralNetworkLayer(layer);
 

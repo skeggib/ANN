@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 import com.skeggib.ANN.Core.Neuron.Neuron;
 import com.skeggib.ANN.Core.Neuron.NeuronInput;
-import com.skeggib.ANN.Core.Neuron.Factory.NeuronFactory;
+import com.skeggib.ANN.Core.Neuron.Factory.NeuronLinearFactory;
 
 import com.skeggib.ANN.Core.Network.NeuralNetworkLayer;
 
@@ -21,21 +21,21 @@ public class NeuralNetworkLayerTest extends TestCase {
     }
 
     public void test_neurons_count_constructor() {
-        NeuralNetworkLayer layer = new NeuralNetworkLayer(5, new NeuronFactory());
+        NeuralNetworkLayer layer = new NeuralNetworkLayer(5, new NeuronLinearFactory());
         assertEquals(5, layer.getNeurons().size());
         assertEquals(null, layer.getNextLayer());
     }
 
     public void test_neurons_count_next_layer_constructor() {
         NeuralNetworkLayer next_layer = new NeuralNetworkLayer();
-        NeuralNetworkLayer layer = new NeuralNetworkLayer(5, new NeuronFactory(), next_layer);
+        NeuralNetworkLayer layer = new NeuralNetworkLayer(5, new NeuronLinearFactory(), next_layer);
         assertEquals(5, layer.getNeurons().size());
         assertEquals(next_layer, layer.getNextLayer());
     }
 
     public void test_setNextLayer() {
-        NeuralNetworkLayer next_layer = new NeuralNetworkLayer(3, new NeuronFactory());
-        NeuralNetworkLayer first_layer = new NeuralNetworkLayer(2, new NeuronFactory(), next_layer);
+        NeuralNetworkLayer next_layer = new NeuralNetworkLayer(3, new NeuronLinearFactory());
+        NeuralNetworkLayer first_layer = new NeuralNetworkLayer(2, new NeuronLinearFactory(), next_layer);
 
         ArrayList<Neuron> first_layer_neurons = first_layer.getNeurons();
         ArrayList<Neuron> next_layer_neurons = next_layer.getNeurons();

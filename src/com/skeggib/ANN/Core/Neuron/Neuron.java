@@ -10,7 +10,7 @@ import com.skeggib.ANN.Core.Neuron.Activation.ActivationLinear;
 import com.skeggib.ANN.Core.Neuron.Sum.SumFunction;
 import com.skeggib.ANN.Core.Neuron.Sum.SumScalar;
 
-public class Neuron implements Observable {
+public abstract class Neuron implements Observable {
 
 	private ArrayList<NeuronInput> inputs;
 	private ArrayList<NeuronInput> next_inputs;
@@ -29,7 +29,7 @@ public class Neuron implements Observable {
 		this.next_inputs = new ArrayList<NeuronInput>();
 		this.threshold = 0.0;
 		this.result = 0.0;
-		this.activation_func = new ActivationLinear();
+		this.activation_func = null;
 		this.sum_func = new SumScalar();
 		
 		this.observers = new ArrayList<Observer>();
